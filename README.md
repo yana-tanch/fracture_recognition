@@ -15,8 +15,19 @@ conda activate dev
 dvc pull
 ```
 
-#### Обучение модели с помощью DVC
+#### Обучение и тестирование модели с помощью DVC pipeline
 
 ```commandline
- dvc exp run -f -n train
+ dvc exp run
 ```
+
+#### Метрики качества 
+Текущие метрики качества на тестовой выборке находятся в файле:
+```commandline
+ dvcline/test/metrics.json
+```
+
+| mAP@50 | F1 score |
+|--------|----------|
+| 96.5 % | 98.3 %   |
+
