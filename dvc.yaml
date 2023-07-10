@@ -1,0 +1,9 @@
+stages:
+  train:
+    cmd: python src/train.py
+    params:
+    - train
+  test:
+    cmd: python src/test.py
+    params:
+    - test

@@ -1,0 +1,68 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python src/train.py
+    params:
+      params.yaml:
+        train:
+          seed: 2023
+          device: cuda:0
+          image_size: 512
+          labels:
+          - 1
+          - 32
+          - 7
+          - 3
+          - 64
+          - 62
+          - 6
+          - 24
+          - 12
+          - 96
+          - 30
+          - 14
+          dataset_dir: data/dataset
+          model: models/yolo.pth
+          train_size: 0.7
+          batch_size: 32
+          nbs: 64
+          num_workers: 8
+          epochs: 100
+          optimizer:
+            lr: 0.01
+            momentum: 0.937
+            weight_decay: 0.0005
+            nesterov: true
+          scheduler:
+            T_0: 10
+            T_mult: 10
+          augmentation:
+            degrees: 5
+            scale: 0.1
+            translate: 0.05
+  test:
+    cmd: python src/test.py
+    params:
+      params.yaml:
+        test:
+          seed: 2023
+          device: cuda:0
+          labels:
+          - 1
+          - 32
+          - 7
+          - 3
+          - 64
+          - 62
+          - 6
+          - 24
+          - 12
+          - 96
+          - 30
+          - 14
+          dataset_dir: data/dataset
+          model: models/yolo.pth
+          train_size: 0.7
+          batch_size: 32
+          num_workers: 8
+          output_dir: data/eval

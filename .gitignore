@@ -9,4 +9,6 @@ __pycache__/
 # App stuffs
 .idea/
 outputs/
-data/
+.vscode/
+
+/models

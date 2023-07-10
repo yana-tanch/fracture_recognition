@@ -1,0 +1,9 @@
+[core]
+    remote = gd_remote
+    autostage = true
+[hydra]
+    enabled = True
+['remote "gd_remote"']
+    url = gdrive://1Ef5BcM37OQzdmKA1Z4l5Qm-k2B50ak0T/fracture_recognition
+    gdrive_acknowledge_abuse = true
+

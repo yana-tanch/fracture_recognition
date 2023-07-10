@@ -10,7 +10,13 @@ conda env create --file conda.yaml
 conda activate dev
 ```
 
-#### Предобработка данных
+#### Скачать данные с DVC репозитория
 ```commandline
-python src/prepare_dataset.py
+dvc pull
+```
+
+#### Обучение модели с помощью DVC
+
+```commandline
+ dvc exp run -f -n train
 ```
