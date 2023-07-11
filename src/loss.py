@@ -251,7 +251,7 @@ class Loss:
                                             beta=6.0,
                                             roll_out_thr=0)
 
-        self.bbox_loss = BboxLoss(self.reg_max - 1, use_dfl=True).to(device)
+        self.bbox_loss = BboxLoss(self.reg_max - 1, use_dfl=False).to(device)
         self.proj = torch.arange(self.reg_max, dtype=torch.float, device=device)
 
         self.anchor_points = anchors.transpose(0, 1)
